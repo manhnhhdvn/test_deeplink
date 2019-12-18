@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "1178531844.com.riracle.mypage",
+                "paths": [ "*" ]
+            }
+        ]
+    }
+}
