@@ -1,4 +1,4 @@
-# test_riracle_deeplink
+# test_deeplink
 
 [Test link](riracle://)
 
