@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<style type="text/css">
+		.tg  {border-collapse:collapse;border-spacing:0;}
+		.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+		.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+		.tg .tg-lboi{border-color:inherit;text-align:left;vertical-align:middle}
+		.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+		.my-body{background-color: azure;}
+	</style>
+	{{ partial "head.html" . }}
+</head>
+<body class="my-body">
+	<h1>Get deeplink from google map link</h1>
+	<p><input type="text" class="form-control" placeholder="Google Map Link" name="google-map-url"/></p>
+	<!-- <p><input type="text" class="form-control" placeholder="GPS Longitude" name="longitude" /></p> -->
+	<!-- <p><input type="text" class="form-control" placeholder="GPS Latitude" name="latitude" /></p> -->
+	<p><input type="text" class="form-control" placeholder="Place name (Optional)" name="place-name" /></p>
+	<p><input type="text" class="form-control" placeholder="Link" name="deep-link" /></p>
+	<p><button id="btn-extract">Extract</button></p>
+	<h1>Test deeplinks</h1>
+	<table class="tg">
+		<tr>
+		<th class="tg-lboi">施設名</th>
+		<th class="tg-0pky">リンク</th>
+		</tr>
+		<tr>
+		<td class="tg-0pky">テレコムスクエア</td>
+		<td class="tg-0pky"><a href="https://pinnar.onelink.me/0HkZ?pid=tokyoinn&amp;af_dp=pinnar%3A%2F%2Faction%2Finform%3Ftype%3D4%26src%3DTelecomSquare%26pid%3D35.6894055%2C139.733324%26name%3DTelecomSquare">テレコムスクエア</a></td>
+		</tr>
+		<tr>
+		<td class="tg-0pky">Toyoko-inn</td>
+		<td class="tg-0pky"><a href="https://pinnar.onelink.me/0HkZ?pid=toyokoinn&amp;af_dp=pinnar%3A%2F%2Faction%2Finform%3Ftype%3D4%26src%3Dtoyokoinn%26pid%3D34.7353310%2C135.5818700%26name%3D%E6%9D%B1%E6%A8%AAINN%E9%96%80%E7%9C%9F%E5%B8%82%E9%A7%85%E5%89%8D">Toyoko-inn</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">Tokyo Tower</td>
+			<td class="tg-0pky"><a href="https://pinnar.onelink.me/0HkZ?pid=tokyoinn&af_dp=pinnar%3A%2F%2Faction%2Finform%3Ftype%3D4%26src%3DTokyo%20Tower%26pid%3D35.6585805%2C139.7454329%26name%3DTokyo%20Tower">Tokyo Tower</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">Odaiba Statue of Liberty Replica</td>
+			<td class="tg-0pky"><a href="https://pinnar.onelink.me/0HkZ?pid=tokyoinn&af_dp=pinnar%3A%2F%2Faction%2Finform%3Ftype%3D4%26src%3DOdaiba%20Statue%20of%20Liberty%20Replica%26pid%3D35.6278435%2C139.7696348%26name%3DOdaiba%20Statue%20of%20Liberty%20Replica">Odaiba Statue of Liberty Replica</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">Yoyogi Park</td>
+			<td class="tg-0pky"><a href="https://pinnar.onelink.me/0HkZ?pid=tokyoinn&af_dp=pinnar%3A%2F%2Faction%2Finform%3Ftype%3D4%26src%3DYoyogi%20Park%26pid%3D35.6715869%2C139.6945141%26name%3DYoyogi%20Park">Yoyogi Park</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">Chiyoda International School - Tokyo</td>
+			<td class="tg-0pky"><a href="https://pinnar.onelink.me/0HkZ?pid=tokyoinn&af_dp=pinnar%3A%2F%2Faction%2Finform%3Ftype%3D4%26src%3DChiyoda%20International%20School%20-%20Tokyo%26pid%3D35.6891388%2C139.7365543%26name%3DChiyoda%20International%20School%20-%20Tokyo">Chiyoda International School - Tokyo</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">Yokohama Station</td>
+			<td class="tg-0pky"><a href="https://pinnar.onelink.me/0HkZ?pid=tokyoinn&af_dp=pinnar%3A%2F%2Faction%2Finform%3Ftype%3D4%26src%3DYokohama%20Station%26pid%3D35.6891388%2C139.7365543%26name%3DYokohama%20Station">Yokohama Station</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">未来館ホール</td>
+			<td class="tg-0pky"><a href="https://pinnar.onelink.me/0HkZ?pid=tokyoinn&af_dp=pinnar%3A%2F%2Faction%2Finform%3Ftype%3D4%26src%3D%E6%9C%AA%E6%9D%A5%E9%A4%A8%E3%83%9B%E3%83%BC%E3%83%AB%26pid%3D35.6193647%2C139.7747679%26name%3D%E6%9C%AA%E6%9D%A5%E9%A4%A8%E3%83%9B%E3%83%BC%E3%83%AB">未来館ホール</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">浅草寺</td>
+			<td class="tg-0pky"><a href="https://pinnar.onelink.me/0HkZ?pid=tokyoinn&af_dp=pinnar%3A%2F%2Faction%2Finform%3Ftype%3D4%26src%3D%E6%B5%85%E8%8D%89%E5%AF%BA%26pid%3D35.7147651%2C139.7944666%26name%3D%E6%B5%85%E8%8D%89%E5%AF%BA">浅草寺</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">Shinjuku Station</td>
+			<td class="tg-0pky"><a href="https://pinnar.onelink.me/0HkZ?pid=tokyoinn&af_dp=pinnar%3A%2F%2Faction%2Finform%3Ftype%3D4%26src%3DShinjuku%20Station%26pid%3D35.7147651%2C139.7944666%26name%3DShinjuku%20Station">Shinjuku Station</a></td>
+		</tr>
+	</table>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#btn-extract').on('click', function() {
+				var url = $('input[name=google-map-url]').val();
+				var place = $('input[name=place-name]').val();
+				if (place == "") {
+					place = "Test"
+				}
+				var regex = new RegExp('@(.*),(.*),');
+				var lon_lat_match = url.match(regex);
+				var lon = lon_lat_match[1];
+				var lat = lon_lat_match[2];
+				var deep_link = "pinnar://action/inform?type=4&src=" + place + "&pid=" + lon + "," + lat + "&name=" + place
+				var encoded_deep_link = encodeURIComponent(deep_link)
+				var extracted_url = "https://pinnar.onelink.me/0HkZ?pid=tokyoinn&af_dp=" + encoded_deep_link
+				var content_of_alert = '<a target="_blank" href="' + extracted_url + '">' + place + '</a>'
+				$('input[name=deep-link]').val(extracted_url);
+				// $('input[name=longitude]').val(lon);
+            	// $('input[name=latitude]').val(lat);
+				$.alert({
+    				title: 'Extracted Url',
+    				content: content_of_alert,
+				});
+			});
+		});
+	</script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+</body>
+</html>
