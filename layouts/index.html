@@ -78,7 +78,7 @@
 				}
 				var regex = new RegExp('@(.*),(.*),');
 				var lon_lat_match = url.match(regex);
-				if (lon_lat_match.length == 0) {
+				if (lon_lat_match == null || lon_lat_match.length == 0) {
 					var new_regex = new RegExp('(.*),(.*)');
 					lon_lat_match = url.match(new_regex);
 				}
