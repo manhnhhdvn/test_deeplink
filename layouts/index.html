@@ -13,7 +13,8 @@
 </head>
 <body class="my-body">
 	<h1>Get deeplink from google map link</h1>
-	<p><input type="text" class="form-control" placeholder="Google Map Link" name="google-map-url"/></p>
+	<p><input type="text" class="form-control" placeholder="Google Map Link, example: https://www.google.com/maps/place/Hanzomon+Station/@35.6855908,139.7334568,15z/..." name="google-map-url"/></p>
+	<p><input type="text" class="form-control" placeholder="Latitude and Longitude (If you have no Google Map Link), example: (35.6910362, 139.7355846)" name="google-map-url"/></p>
 	<!-- <p><input type="text" class="form-control" placeholder="GPS Longitude" name="longitude" /></p> -->
 	<!-- <p><input type="text" class="form-control" placeholder="GPS Latitude" name="latitude" /></p> -->
 	<p><input type="text" class="form-control" placeholder="Place name (Optional)" name="place-name" /></p>
@@ -77,6 +78,10 @@
 				}
 				var regex = new RegExp('@(.*),(.*),');
 				var lon_lat_match = url.match(regex);
+				if (lon_lat_match.length == 0) {
+					var new_regex = new RegExp('(.*),(.*)');
+					lon_lat_match = url.match(new_regex);
+				}
 				var lon = lon_lat_match[1];
 				var lat = lon_lat_match[2];
 				var deep_link = "pinnar://action/inform?type=4&src=" + place + "&pid=" + lon + "," + lat + "&name=" + place
