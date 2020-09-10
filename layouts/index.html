@@ -12,19 +12,212 @@
 	{{ partial "head.html" . }}
 </head>
 <body class="my-body">
-	<h1>Get deeplink from google map link</h1>
+	<!-- <h1>Get deeplink from google map link</h1>
 	<p><input type="text" class="form-control" placeholder="Google Map Link, example: https://www.google.com/maps/place/Hanzomon+Station/@35.6855908,139.7334568,15z/..." name="google-map-url"/></p>
 	<p><input type="text" class="form-control" placeholder="Latitude and Longitude (If you have no Google Map Link), example: (35.6910362, 139.7355846)" name="lon-and-lat"/></p>
-	<!-- <p><input type="text" class="form-control" placeholder="GPS Longitude" name="longitude" /></p> -->
-	<!-- <p><input type="text" class="form-control" placeholder="GPS Latitude" name="latitude" /></p> -->
 	<p><input type="text" class="form-control" placeholder="Place name (Optional)" name="place-name" /></p>
 	<p><input type="text" class="form-control" placeholder="Link" name="deep-link" /></p>
-	<p><button id="btn-extract">Extract</button></p>
+	<p><button id="btn-extract">Extract</button></p> -->
+	<h1>corepushパラメータ</h1>
+	<a href="https://telecomsquarejp-my.sharepoint.com/:x:/g/personal/h_moriguchi_telecomsquare_co_jp/EY6kuYpSEglHvG_Iihfx_E8B_zG9EHHcZ93_pkt8oEhY7Q?e=yEN8n4">参照リンク</a>
+	<table class="tg">
+		<tr>
+			<th class="tg-lboi"><b>Action</b></th>
+			<th class="tg-lboi"><b>type</b></th>
+			<th class="tg-lboi"><b>入力情報</b></th>
+			<th class="tg-lboi"><b>テストリンク</b></th>
+		</tr>
+		<tr>
+			<td class="tg-0pky">inform</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">&pid=googleplaceID</br>&name=場所名</td>
+			<td class="tg-0pky"><a href="pinnar://action/inform?type=0&pid=ChIJ7xrqSWCMGGARskLud91RyEE&name=TelecomSquare">pinnar://action/inform?type=0&pid=ChIJ7xrqSWCMGGARskLud91RyEE&name=TelecomSquare</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">inform</td>
+			<td class="tg-0pky">1</td>
+			<td class="tg-0pky">&pid=googleplaceID</br>&name=場所名</td>
+			<td class="tg-0pky"><a href="pinnar://action/inform?type=1&pid=ChIJ7xrqSWCMGGARskLud91RyEE&name=TelecomSquare">pinnar://action/inform?type=1&pid=ChIJ7xrqSWCMGGARskLud91RyEE&name=TelecomSquare</a></td>
+		<tr>
+			<td class="tg-0pky">inform</td>
+			<td class="tg-0pky">2</td>
+			<td class="tg-0pky">&pid=店舗ID</td>
+			<td class="tg-0pky"><a href="pinnar://action/inform?type=2&pid=5474">pinnar://action/inform?type=2&pid=5474</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">inform</td>
+			<td class="tg-0pky">3</td>
+			<td class="tg-0pky">&pid=店舗ID</td>
+			<td class="tg-0pky"><a href="pinnar://action/inform?type=3&pid=5474">pinnar://action/inform?type=3&pid=5474</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">inform</td>
+			<td class="tg-0pky">4</td>
+			<td class="tg-0pky">&src=起動元Webサイト(なくてもいい)</br>&pid=緯度,経度</br>&name=場所名</td>
+			<td class="tg-0pky"><a href="pinnar://action/inform?type=4&pid=35.6894055,139.733324&name=TelecomSquare">pinnar://action/inform?type=4&pid=35.6894055,139.733324&name=TelecomSquare</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">inform</td>
+			<td class="tg-0pky">5</td>
+			<td class="tg-0pky">&pid=店舗ID</td>
+			<td class="tg-0pky"><a href="pinnar://action/inform?type=5&pid=5474">pinnar://action/inform?type=5&pid=5474</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">inform</td>
+			<td class="tg-0pky">6</td>
+			<td class="tg-0pky">&pid=店舗ID</td>
+			<td class="tg-0pky"><a href="pinnar://action/inform?type=6&pid=5474">pinnar://action/inform?type=6&pid=5474</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">ar</td>
+			<td class="tg-0pky">なし</td>
+			<td class="tg-0pky">なし</td>
+			<td class="tg-0pky"><a href="pinnar://action/ar">pinnar://action/ar</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">coupon（期限切れ）</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">&pid=店舗ID,クーポンID</td>
+			<td class="tg-0pky"><a href="pinnar://action/coupon?type=0&pid=5474,1070">pinnar://action/coupon?type=0&pid=5474,1070</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">coupon（有効）</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">&pid=店舗ID,クーポンID</td>
+			<td class="tg-0pky"><a href="pinnar://action/coupon?type=0&pid=13,1044">pinnar://action/coupon?type=0&pid=13,1044</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">coupon</td>
+			<td class="tg-0pky">1</td>
+			<td class="tg-0pky">なし</td>
+			<td class="tg-0pky"><a href="pinnar://action/coupon?type=1">pinnar://action/coupon?type=1</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">coupon</td>
+			<td class="tg-0pky">2</td>
+			<td class="tg-0pky">&pid=エリアID</td>
+			<td class="tg-0pky"><a href="pinnar://action/coupon?type=2&pid=2">pinnar://action/coupon?type=2&pid=2</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">coupon</td>
+			<td class="tg-0pky">3</td>
+			<td class="tg-0pky">なし</td>
+			<td class="tg-0pky"><a href="pinnar://action/coupon?type=3">pinnar://action/coupon?type=3</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">browse (encode) - DeepLink専用</td>
+			<td class="tg-0pky">なし</td>
+			<td class="tg-0pky">?url=https://…の’形式</td>
+			<td class="tg-0pky"><a href="pinnar://action/browse?url=https%3A%2F%2Ftelecomsquare%2Eco%2Ejp%2F">pinnar://action/browse?url=https%3A%2F%2Ftelecomsquare%2Eco%2Ejp%2F</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">browse - プッシュ通知専用</td>
+			<td class="tg-0pky">なし</td>
+			<td class="tg-0pky">?url=https://…の’形式</td>
+			<td class="tg-0pky"><a href="pinnar://action/browse?url=https://www.telecomsquare.co.jp/">pinnar://action/browse?url=https://www.telecomsquare.co.jp/</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">?pid=周辺スポットID</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=0&pid=電車">pinnar://action/nearbyspot?type=0&pid=電車</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">?pid=周辺スポットID</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=0&pid=バス">pinnar://action/nearbyspot?type=0&pid=バス</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">?pid=周辺スポットID</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=0&pid=レストラン">pinnar://action/nearbyspot?type=0&pid=レストラン</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">?pid=周辺スポットID</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=0&pid=カフェ">pinnar://action/nearbyspot?type=0&pid=カフェ</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">?pid=周辺スポットID</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=0&pid=バー">pinnar://action/nearbyspot?type=0&pid=バー</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">?pid=周辺スポットID</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=0&pid=買い物">pinnar://action/nearbyspot?type=0&pid=買い物</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">?pid=周辺スポットID</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=0&pid=病院">pinnar://action/nearbyspot?type=0&pid=病院</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">?pid=周辺スポットID</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=0&pid=ホテル">pinnar://action/nearbyspot?type=0&pid=ホテル</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">?pid=周辺スポットID</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=0&pid=ATM">pinnar://action/nearbyspot?type=0&pid=ATM</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">?pid=周辺スポットID</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=0&pid=コンビニ">pinnar://action/nearbyspot?type=0&pid=コンビニ</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">?pid=周辺スポットID</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=0&pid=タクシー">pinnar://action/nearbyspot?type=0&pid=タクシー</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">?pid=周辺スポットID</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=0&pid=レジャー">pinnar://action/nearbyspot?type=0&pid=レジャー</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">?pid=周辺スポットID</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=0&pid=美術館">pinnar://action/nearbyspot?type=0&pid=美術館</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">?pid=周辺スポットID</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=0&pid=ナイトクラブ">pinnar://action/nearbyspot?type=0&pid=ナイトクラブ</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">0</td>
+			<td class="tg-0pky">?pid=周辺スポットID</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=0&pid=バー">pinnar://action/nearbyspot?type=0&pid=バー</a></td>
+		</tr>
+		<tr>
+			<td class="tg-0pky">nearbyspot</td>
+			<td class="tg-0pky">1</td>
+			<td class="tg-0pky">なし</td>
+			<td class="tg-0pky"><a href="pinnar://action/nearbyspot?type=1">pinnar://action/nearbyspot?type=1</a></td>
+		</tr>
+	</table>
 	<h1>Test deeplinks</h1>
 	<table class="tg">
 		<tr>
-		<th class="tg-lboi">施設名</th>
-		<th class="tg-0pky">リンク</th>
+		<th class="tg-lboi"><b>施設名</b></th>
+		<th class="tg-lboi"><b>リンク</b></th>
 		</tr>
 		<tr>
 		<td class="tg-0pky">テレコムスクエア</td>
